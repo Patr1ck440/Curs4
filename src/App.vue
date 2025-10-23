@@ -1,5 +1,11 @@
 <script setup></script>
 
+import {onMounted} from 'vue';
+
+onMounted(() => {
+  console.log('App mounted');
+});
+
 <template>
   <h1>You did it!</h1>
   <p>
