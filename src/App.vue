@@ -57,7 +57,11 @@ const updateRandomNumber = () => {
 </div>
 </br>
 
+<br><i class="bi bi-airplane"></i></br>
 
 </template>
 
-<style scoped></style>*
+<style>
+@import "bootstrap-icons";
+@import 'tailwindcss';
+</style>
