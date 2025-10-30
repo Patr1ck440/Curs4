@@ -1,4 +1,7 @@
 <script setup>
+
+
+
 import { onMounted, onUpdated } from 'vue';
 
 onMounted(() => {
@@ -10,12 +13,20 @@ onUpdated(() => {
 });
 
 import { ref } from 'vue';
+import YouDidIt from './components/YouDidIt.vue';
 const message = ref('Button clicked!');
 const clickHandler = () => {
   message.value = 'Button clicked!';
 };
 
 const link = ref('https://emanuel.ro/');
+
+const students = ref([
+  {name: 'Emanuel', grade: 9},
+  {name: 'Ana', grade: 10},
+  {name: 'Ion', grade: 8},
+  {name: 'Maria', grade: 9.5}
+]);
 
 
 const randomNumber = ref(null)
@@ -35,17 +46,9 @@ const updateRandomNumber = () => {
   <p>Random number is less than or equal to 0.5</p>
 </div>
 
-  <h1>You did it!</h1>
-  <button @click="clickHandler">Click me</button>
-  <p>{{ message }}</p>
-  <br>
-  <input
-    type="text"
-    v-model="message"
-    @change="console.log('Input changed!')"
-    @input="console.log('You have typed: ' + $event.target.value)"
-    @keyup="console.log('Key up event detected!')"
-  />
+
+  <YouDidIt />
+
   </br>
 <br>
 <hr>
@@ -58,6 +61,20 @@ const updateRandomNumber = () => {
 </br>
 
 <br><i class="bi bi-airplane"></i></br>
+
+
+
+<h3>
+  Test v-for
+</h3>
+<ul>
+  <li v-for="(student,index) in students" :key="index">
+    Name:  {{student.name}},
+    Grade: {{student.grade}}  
+  </li>
+</ul>
+
+
 
 </template>
 
