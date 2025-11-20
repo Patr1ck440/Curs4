@@ -1,7 +1,7 @@
 <script setup>
 
 
-
+import { RouterLink, RouterView } from 'vue-router'
 import { onMounted, onUpdated } from 'vue';
 
 onMounted(() => {
